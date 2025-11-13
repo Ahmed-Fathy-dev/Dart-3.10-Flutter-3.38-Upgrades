@@ -1,4 +1,4 @@
-# الشرح التفصيلي — What’s new in Flutter 3.38 (هيكل مبدئي)
+# الشرح التفصيلي — What’s new in Flutter 3.38 
 
 ## فهرس المحتوى
 - 1. [شرح Dot shorthands](#dot-shorthands)
