@@ -4,16 +4,15 @@
 - 1. [شرح Dot shorthands](#dot-shorthands)
 - 2. [تحديثات ال Web — `web_dev_config.yaml` و proxy و hot reload](#web-dev-proxy-hot-reload)
 - 3. [تحديثات ال Framework — `OverlayPortal` و Predictive back و دعم Windows و تحسينات Lifecycle و إصلاحات Web و Android IME](#framework-updates)
-- 4. [تحديثات Material و Cupertino — `WidgetState` migration و `IconButton.statesController` و `Badge.count(maxCount)` و `InkWell.onLongPressUp` وتحسينات iOS](#material-cupertino-updates)
+- 4. [تحديثات Material و Cupertino — `IconButton.statesController` و `Badge.count(maxCount)` و `InkWell.onLongPressUp` وتحسينات Cupertino](#material-cupertino-updates)
 - 5. [فصل Material و Cupertino — خطة الفصل والمراجع](#material-cupertino-decoupling)
 - 6. [التمرير Scrolling — إصلاحات slivers و `SliverGrid.list` و focus navigation](#scrolling-slivers)
-- 7. [الوصولية Accessibility — `ensureSemantics` و `debugDumpSemanticsTree` و `SliverSemantics` وتحسينات widgets](#accessibility)
-- 8. [تحديثات ال iOS — دعم iOS 26/Xcode 26/macOS 26 و UIScene lifecycle migration](#ios-updates)
-- 9. [تحديثات ال Android — 16KB page size و Memory fixes و Dependency matrix و SDK API vars](#android-updates)
+- 7. [تحديثات ال Accessibility — `debugDumpSemanticsTree` و `ensureSemantics` و `SliverSemantics`](#accessibility)
+- 8. [تحديثات ال iOS — UIScene lifecycle migration](#ios-updates)
+- 9. [تحديثات ال Android — الاستقرار وبيئة البناء](#android-updates)
 - 10. [تحديثات ال Engine — Performance overlay و Vulkan/OpenGL ES و Renderer unification و Thread merging](#engine-updates)
 - 11. [تحديثات ال DevTools و IDEs — Widget Previews updates و Known issue و DevTools fixes](#devtools-ides-updates)
-- 12. [كسر التوافق — Deprecations and breaking changes](#breaking-changes)
-- 13. [الخاتمة](#outro)
+- 12. [ — Deprecations and breaking changes](#breaking-changes)
 
 ---
 
