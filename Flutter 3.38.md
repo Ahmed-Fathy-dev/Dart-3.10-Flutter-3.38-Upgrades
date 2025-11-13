@@ -121,7 +121,7 @@ server:
 
 #### ملاحظات مهمة
 - الطلبات بتتطابق بالترتيب المكتوب في `web_dev_config.yaml` (الأولوية من أعلى لأسفل).
-- Hot reload للويب مفعّل افتراضيًا من إصدارات سابقة (3.35+)، و3.38 يكمل عليه؛ استخدمه لتحسين دورة التطوير.
+- دلوقتى Hot reload للويب مفعّل افتراضيًا من إصدارات سابقة (3.35+)، و3.38 يكمل عليه؛ استخدمه لتحسين دورة التطوير.
 - لو حصل التباس في قواعد الـ proxy، راجع ترتيب القواعد وحقول `prefix/replace`.
 
 #### المراجع
@@ -292,9 +292,9 @@ InkWell(
 الشرح: الهدف فصل مكتبات **Material** و**Cupertino** عن نواة Flutter (framework) ونقلها كحِزم أول‑طرف مستقلة ضمن `flutter/packages`. ده يسمح بتحديثات أسرع ودورات إصدار مستقلة، وتخفيف ترابط النواة بما يسهّل تبنّي واجهات أخرى مستقبلًا.
 
 #### ماذا يعني ذلك الآن (Flutter 3.38)
-- لا يوجد تغيير كسري فوري على استيرادك الحالي (`package:flutter/material.dart` و`package:flutter/cupertino.dart`).
+- لا يوجد تغيير break changes على استيرادك الحالي (`package:flutter/material.dart` و`package:flutter/cupertino.dart`).
 - تركيز الفريق على تحسين عملية إصدار `flutter/packages` تمهيدًا لضم Material وCupertino بعد الفصل.
-- أي تغييرات جوهرية مستقبلًا سيتم توفير أدلة هجرة لها قبل تطبيقها.
+- أي تغييرات جوهرية مستقبلًا سيتم توفير أدلة migration لها قبل تطبيقها.
 
 #### إرشادات للمطورين
 - استخدم واجهات الـ API العامة فقط؛ تجنّب الاستيراد من مسارات داخلية (`package:flutter/src/...`).
@@ -348,7 +348,7 @@ CustomScrollView(
 ---
 
 <a name="accessibility"></a>
-## الوصولية Accessibility
+## ال Accessibility
 
 الشرح: أضاف الإصدار تحسينات تتعلّق بتشخيص الـ Semantics على مستوى الشجرة، ودعم أفضل لـ slivers.
 
@@ -392,8 +392,8 @@ CustomScrollView(
 ## تحديثات ال iOS
 الشرح: آبل تتجه لفرض اعتماد **UIScene lifecycle** بدل دورة حياة `AppDelegate` التقليدية. مع Flutter، لازم تهاجر لمسار **UISceneDelegate** لأن من بعد iOS حديث (وفق إعلان آبل) التطبيقات المبنية بآخر SDK مش هتشتغل من غير UIScene.
 
-#### خطوات سريعة (هجرة تلقائية عبر Flutter CLI)
-- فعّل ميزة الهجرة:
+#### خطوات سريعة (migration تلقائية عبر Flutter CLI)
+- فعّل ميزة ال migration :
 ```bash
 flutter config --enable-uiscene-migration
 ```
@@ -403,11 +403,11 @@ flutter run
 # أو
 flutter build ios
 ```
-- في حال نجاح الهجرة سيظهر إشعار يؤكد إتمام الانتقال إلى UIScene lifecycle. عند الفشل (مثل وجود تخصيصات في AppDelegate)، اتبع خطوات الهجرة اليدوية في الدليل.
+- في حال نجاح ال migration سيظهر إشعار يؤكد إتمام الانتقال إلى UIScene lifecycle. عند الفشل (مثل وجود تخصيصات في AppDelegate)، اتبع خطوات ال migration اليدوية في الدليل.
 
 #### ملاحظات مهمة
-- بعد الهجرة، **منطق واجهة المستخدم** يبقى داخل `UISceneDelegate`، و`AppDelegate` يتعامل مع أحداث العملية العامة فقط.
-- راجع التعديلات المطلوبة في `Info.plist` وملفات الـ delegate لو احتجت هجرة يدوية.
+- بعد ال migration **منطق واجهة المستخدم** يبقى داخل `UISceneDelegate`، و`AppDelegate` يتعامل مع أحداث العملية العامة فقط.
+- راجع التعديلات المطلوبة في `Info.plist` وملفات الـ delegate لو احتجت migration يدوية.
 
 #### المراجع
 - مرجع: UISceneDelegate adoption (breaking change): https://docs.flutter.dev/release/breaking-changes/uiscenedelegate
@@ -430,7 +430,7 @@ flutter build ios
 
 الشرح: يتناول هذا المحور تحديثات متفرقة في الـ engine (رسوميات/مسارات التنفيذ/تحسينات تشخيصية). راجع ملاحظات الإصدار للاطلاع على تفاصيل Vulkan/OpenGL ES وأي توحيد/تغييرات في الـ renderer.
 
-#### مثال تشخيصي (Performance overlay)
+#### مثال (Performance overlay)
 الشرح: لتتبّع الأداء أثناء التطوير يمكنك إظهار طبقة الأداء.
 
 ```dart
@@ -462,13 +462,13 @@ MaterialApp(
 ---
 
 <a name="breaking-changes"></a>
-## كسر التوافق — Deprecations and breaking changes
+## ال Deprecations and breaking changes
 
-الشرح: راجع صفحة **Breaking changes** لإصدارات Flutter للاطلاع على أي تغييرات تتطلب هجرة. من أبرز ما ستحتاج إليه فعليًا:
+الشرح: راجع صفحة **Breaking changes** لإصدارات Flutter للاطلاع على أي تغييرات تتطلب migration. من أبرز ما ستحتاج إليه فعليًا:
 - اعتماد **Predictive back** على Android: تجنّب `WillPopScope` واستخدم `PopScope`.
-- اعتماد **UIScene lifecycle** على iOS: الهجرة إلى `UISceneDelegate`.
+- اعتماد **UIScene lifecycle** على iOS: ال migration إلى `UISceneDelegate`.
 
-#### مثال هجرة (WillPopScope -> PopScope)
+#### مثال migration (WillPopScope -> PopScope)
 
 ```dart
 // Before: WillPopScope
@@ -495,11 +495,6 @@ PopScope(
 - مرجع: UISceneDelegate adoption: https://docs.flutter.dev/release/breaking-changes/uiscenedelegate
 
 ---
-
-<a name="outro"></a>
-## الخاتمة
-
-الخلاصة: ركّز الإصدار 3.38 على تحسينات عملية للمطورين: ضبط إعدادات خادم تطوير الويب عبر `web_dev_config.yaml`، دعم أنماط واجهة متقدمة مثل `OverlayPortal`، تكامل أفضل مع **Predictive back**، وتحسينات مواد/كوبيرتينو ووصولية وبيئات المنصات. للمزيد من القراءة والتفاصيل منخفضة المستوى، راجع ملاحظات الإصدار الرسمية وروابط الهجرة.
-
 #### مراجع إضافية
+- مرجع: Flutter 3.38.0 : https://blog.flutter.dev/whats-new-in-flutter-3-38-3f7b258f7228
 - مرجع: Release notes (index): https://docs.flutter.dev/release/release-notes
