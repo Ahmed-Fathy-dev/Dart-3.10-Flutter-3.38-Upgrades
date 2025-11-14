@@ -12,7 +12,7 @@
 - 9. [تحديثات ال Android — الاستقرار وبيئة البناء](#android-updates)
 - 10. [تحديثات ال Engine — Performance overlay و Vulkan/OpenGL ES و Renderer unification و Thread merging](#engine-updates)
 - 11. [تحديثات ال DevTools و IDEs — Widget Previews updates و Known issue و DevTools fixes](#devtools-ides-updates)
-- 12. [ — Deprecations and breaking changes](#breaking-changes)
+- 12. [ أهم Deprecations and breaking changes](#breaking-changes)
 
 ---
 
