@@ -14,7 +14,7 @@
  - 8. [إنشاء Annotations مخصصة (Preview/transform)](#custom-annotations)
  - 9. [إنشاء معاينات متعددة (MultiPreview/transform)](#multi-preview)
  - 10. [قيود وحدود](#limitations)
- - 11. [كسر التوافق](#breaking-changes)
+ - 11. [ال breaking-changes](#breaking-changes)
  - 12. [نصائح عملية](#tips)
  - 13. [مراجع](#refs)
 
@@ -44,21 +44,17 @@
  
  <a name="run-examples"></a>
  ### تشغيل أمثلة المشروع
- - أولاً افتح مشروع التجربة `widget_preview_test/` من المسار `flutter-dart-upgrades/widget_preview_test/`.
- - ثانياً شغّل نفس الأمر من جذر المشروع:
+ - أولاً افتح مسار مشروع للتجربة widget_preview_test/`.
+ - ثانياً شغّل نفس الأمر من روت المشروع:
  ```bash
  flutter widget-preview start
  ```
  - ثالثاً افتح تبويب "Flutter Widget Preview" في الـIDE أو استخدم Chrome اللي هيفتح تلقائي، وشغّل خيار "Filter previews by selected file" لو عايز تعرض كل الأمثلة.
- - رابعاً جرّب الملفات:
-   - `lib/previews_basic.dart` (أساسيات: Text/Container/WidgetBuilder/Static method)
-   - `lib/previews_custom.dart` (أنوتيشن مخصّصة مع Theme)
-   - `lib/previews_multi.dart` (أكتر من @Preview لنفس الهدف)
-   - `lib/widgets.dart` (Widgets مساعدة مثل `ButtonShowcase` و`ColorDot`)
+
 
  <a name="preview-widget"></a>
  ## معاينة Widget باستخدام @Preview
- لازم تستخدم التعليمة `@Preview` من الحزمة `package:flutter/widget_previews.dart` عشان تميّز الهدف اللي هيتعاين. ممكن تطبّقها على:
+ لازم تستخدم `@Preview` من الحزمة `package:flutter/widget_previews.dart` عشان تميّز الهدف اللي هيتعاين. ممكن تطبّقها على:
  - دوال top-level تُعيد `Widget` أو `WidgetBuilder`.
  - توابع static داخل كلاس تُعيد `Widget` أو `WidgetBuilder`.
  ## عناصر التحكم في واجهة المعاينة
@@ -255,20 +251,22 @@
 
  <a name="limitations"></a>
  ## قيود وحدود
- - **Public callback names:** يجب أن تكون كل callbacks الممرّرة في الأنوتيشن عامة و`const` لعمل توليد الشيفرة في المعاين بشكل صحيح.
- - **APIs غير مدعومة:** لا دعم لـ`dart:io` و`dart:ffi` أو الـplugins الأصلية لأن المعاين مبني على Flutter Web.
-   - Widgets ذات تبعيات ترانزيتيف على `dart:io` تُحمَّل لكن أي استدعاء فعلي سيُرمِي استثناء.
-   - Widgets ذات تبعيات ترانزيتيف على `dart:ffi` تفشل بالتحميل كلياً. راجع القضية: https://github.com/flutter/flutter/issues/166431
+ - اولا **Public callback names:** يجب أن تكون كل callbacks الممرّرة في الأنوتيشن عامة و`const` لعمل توليد الشيفرة في المعاين بشكل صحيح.
+ - ثانيا **APIs غير مدعومة:** لا دعم لـ`dart:io` و`dart:ffi` أو الـplugins الأصلية لأن المعاين مبني على Flutter Web.
+
+   -ال Widgets ذات تبعيات ترانزيتيف على `dart:io` تُحمَّل لكن أي استدعاء فعلي سيُرمِي استثناء.
+   
+   -ال Widgets ذات تبعيات ترانزيتيف على `dart:ffi` تفشل بالتحميل كلياً. راجع المشكلة: https://github.com/flutter/flutter/issues/166431
    - قد تعمل بعض web plugins على Chrome، لكن لا ضمان لعملها عند تضمين المعاين داخل IDE.
    - للاسترشادات حول الاستيرادات الشرطية راجع: https://dart.dev/tools/pub/create-packages
  - **مسارات الأصول (Assets):** عند استخدام `fromAsset` من `dart:ui` استخدم مسارات بنمط package لضمان عملها على الويب:
    - استخدم: `packages/my_package_name/assets/my_image.png`
    - تجنّب: `assets/my_image.png`
- - **Widgets بلا قيود:** إن لم توفّر قيوداً، سيقيّد المعاين الودجت تلقائياً إلى نحو نصف العرض/الارتفاع. يُفضّل ضبط `size` صراحةً.
+ -ال **Widgets بلا قيود:** إن لم توفّر قيوداً، سيقيّد المعاين الودجت تلقائياً إلى نحو نصف العرض/الارتفاع. يُفضّل ضبط `size` صراحةً.
  - **مشاريع متعددة داخل IDE:** حالياً يدعم مشروعاً واحداً أو Pub workspace واحداً. قيد المتابعة: https://github.com/flutter/flutter/issues/173550
 
  <a name="breaking-changes"></a>
- ## كسر التوافق
+ ## break changes
  كون الميزة **تجريبية**، قد تتغير الواجهات البرمجية وتُدخل تغييرات كاسرة في تحديثات لاحقة. للتخفيف:
  - ثبّت نسخة Flutter عند الحاجة ضمن فريقك.
  - تابع ملاحظات الإصدارات الرسمية.
