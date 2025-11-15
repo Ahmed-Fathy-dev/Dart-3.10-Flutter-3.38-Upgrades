@@ -10,10 +10,9 @@
 - 7. [تحديثات ال Accessibility — `debugDumpSemanticsTree` و `ensureSemantics` و `SliverSemantics`](#accessibility)
 - 8. [تحديثات ال iOS — UIScene lifecycle migration](#ios-updates)
 - 9. [تحديثات ال Android — الاستقرار وبيئة البناء](#android-updates)
-- 10. [تحديثات ال Engine — Performance overlay و Vulkan/OpenGL ES و Renderer unification و Thread merging](#engine-updates)
+- 10. [تحديثات ال Engine — تحسينات الرسوميات والتشخيص](#engine-updates)
 - 11. [تحديثات ال DevTools و IDEs — Widget Previews updates و Known issue و DevTools fixes](#devtools-ides-updates)
 - 12. [ أهم Deprecations and breaking changes](#breaking-changes)
-
 ---
 
 <a name="dot-shorthands"></a>
@@ -232,7 +231,7 @@ MaterialApp(
 
 ```dart
 // Control interactive states via a statesController
-final controller = MaterialStatesController();
+final controller = WidgetStatesController();
 
 IconButton(
   statesController: controller,
@@ -368,7 +367,6 @@ final handle = SemanticsBinding.instance.ensureSemantics();
 // ... perform diagnostics that rely on semantics ...
 handle.dispose();
 ```
-
 #### دعم SliverSemantics
 الشرح: استخدام `SliverSemantics` لدعم semantics على مستوى slivers داخل `CustomScrollView`.
 
@@ -384,7 +382,11 @@ CustomScrollView(
           const ListTile(title: Text('Item B')),
         ]),
       ),
+    ),
+  ],
+);
 
+```
 ---
 
 <a name="ios-updates"></a>
@@ -402,7 +404,6 @@ flutter run
 # أو
 flutter build ios
 ```
-- في حال نجاح ال migration سيظهر إشعار يؤكد إتمام الانتقال إلى UIScene lifecycle. عند الفشل (مثل وجود تخصيصات في AppDelegate)، اتبع خطوات ال migration اليدوية في الدليل.
 
 #### ملاحظات مهمة
 - بعد ال migration **منطق واجهة المستخدم** يبقى داخل `UISceneDelegate`، و`AppDelegate` يتعامل مع أحداث العملية العامة فقط.
