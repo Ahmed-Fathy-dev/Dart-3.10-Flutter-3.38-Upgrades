@@ -42,14 +42,6 @@
  ```
  - يفتح ذلك بيئة معاينة محلية في Chrome تتحدّث مع تغييرات مشروعك.
  
- <a name="run-examples"></a>
- ### تشغيل أمثلة المشروع
- - أولاً افتح مسار مشروع للتجربة widget_preview_test/`.
- - ثانياً شغّل نفس الأمر من روت المشروع:
- ```bash
- flutter widget-preview start
- ```
- - ثالثاً افتح تبويب "Flutter Widget Preview" في الـIDE أو استخدم Chrome اللي هيفتح تلقائي، وشغّل خيار "Filter previews by selected file" لو عايز تعرض كل الأمثلة.
 
 
  <a name="preview-widget"></a>
@@ -99,7 +91,7 @@
 
  <a name="custom-annotations"></a>
  ## إنشاء Annotations مخصصة (Preview/transform)
- لازم لو عايز تقلل التكرار، تمدّد `Preview` وتعمل أنوتيشن مخصص يضبط إعدادات مشتركة.
+ لازم لو عايز تقلل التكرار، تورث من `Preview` وتعمل أنوتيشن مخصص يضبط إعدادات مشتركة.
 
  #### مثال: تزويد بيانات Theme تلقائياً
  ```dart
@@ -127,7 +119,7 @@
  ```
 
  #### مثال: التحويل وقت التشغيل عبر `transform()`
- يمكنك override للتابع `transform()` لإجراء تعديلات ديناميكية غير ممكنة في سياق `const`.
+ يمكنك override للدالة `transform()` لإجراء تعديلات ديناميكية غير ممكنة في سياق `const`.
  ```dart
  import 'package:flutter/widget_previews.dart';
  import 'package:flutter/material.dart';
@@ -167,7 +159,7 @@
 
  <a name="multi-preview"></a>
  ## إنشاء معاينات متعددة (MultiPreview/transform)
- لازم تعرف إنك تقدر يا إمّا تطبّق أكتر من `@Preview` على نفس الدالة/المُنشيء، أو تستخدم `MultiPreview` وتعمل أنوتيشن تطلع لك معاينات متعددة.
+ لازم تعرف إنك تقدر يا إمّا تطبّق أكتر من `@Preview` على نفس الدالة/الكونستراكتور، أو تستخدم `MultiPreview` وتعمل أنوتيشن تطلع لك معاينات متعددة.
 
  #### الطريقة 1: أكثر من @Preview على نفس الهدف
  ```dart
@@ -266,7 +258,7 @@
  - **مشاريع متعددة داخل IDE:** حالياً يدعم مشروعاً واحداً أو Pub workspace واحداً. قيد المتابعة: https://github.com/flutter/flutter/issues/173550
 
  <a name="breaking-changes"></a>
- ## break changes
+ ## لازم نعمل حساب breaking changes
  كون الميزة **تجريبية**، قد تتغير الواجهات البرمجية وتُدخل تغييرات كاسرة في تحديثات لاحقة. للتخفيف:
  - ثبّت نسخة Flutter عند الحاجة ضمن فريقك.
  - تابع ملاحظات الإصدارات الرسمية.
