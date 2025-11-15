@@ -1,4 +1,4 @@
-# الشرح التفصيلي — What’s new in Flutter 3.38 (هيكل مبدئي)
+# الشرح التفصيلي — What’s new in Flutter 3.38 
 
 ## فهرس المحتوى
 - 1. [شرح Dot shorthands](#dot-shorthands)
@@ -12,8 +12,7 @@
 - 9. [تحديثات ال Android — الاستقرار وبيئة البناء](#android-updates)
 - 10. [تحديثات ال Engine — تحسينات الرسوميات والتشخيص](#engine-updates)
 - 11. [تحديثات ال DevTools و IDEs — Widget Previews updates و Known issue و DevTools fixes](#devtools-ides-updates)
-- 12. [ال Deprecations and breaking changes](#breaking-changes)
-
+- 12. [ أهم Deprecations and breaking changes](#breaking-changes)
 ---
 
 <a name="dot-shorthands"></a>
